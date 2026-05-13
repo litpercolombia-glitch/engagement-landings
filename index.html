@@ -4,44 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guías Gratuitas — LITPER OFICIAL</title>
+  <meta name="description" content="Descarga gratis nuestras guías premium para transformar tu hogar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f0f1a; color: #fff; min-height: 100vh; }
-    .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
-    h1 { font-size: 28px; text-align: center; margin-bottom: 8px; }
-    .gold { color: #d4a843; }
-    .subtitle { text-align: center; color: #999; margin-bottom: 40px; font-size: 14px; }
-    .card { background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 16px; padding: 24px; margin-bottom: 20px; text-decoration: none; color: #fff; display: block; transition: transform 0.2s, border-color 0.2s; }
-    .card:hover { transform: translateY(-2px); border-color: #d4a843; }
-    .badge { background: #d4a843; color: #0f0f1a; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; display: inline-block; margin-bottom: 12px; }
-    .card h2 { font-size: 20px; margin-bottom: 8px; }
-    .card p { color: #aaa; font-size: 14px; line-height: 1.5; }
-    .arrow { color: #d4a843; font-size: 20px; margin-top: 12px; display: inline-block; }
-    .footer { text-align: center; color: #666; font-size: 12px; margin-top: 40px; }
-    .logo { text-align: center; margin-bottom: 30px; font-size: 24px; font-weight: 700; letter-spacing: 2px; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',system-ui,sans-serif;background:#0d0d1a;color:#fff;min-height:100vh;overflow-x:hidden}
+    .bg-float{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+    .bg-float::before,.bg-float::after{content:'';position:absolute;border-radius:50%;filter:blur(120px);opacity:.15;animation:bgFloat 8s ease-in-out infinite alternate}
+    .bg-float::before{width:400px;height:400px;background:#D4AF37;top:-100px;left:-100px}
+    .bg-float::after{width:350px;height:350px;background:#C41E3A;bottom:-100px;right:-100px;animation-delay:4s}
+    @keyframes bgFloat{0%{transform:translate(0,0)}100%{transform:translate(40px,30px)}}
+    .container{max-width:560px;margin:0 auto;padding:40px 20px;position:relative;z-index:1}
+    .logo{text-align:center;font-size:28px;font-weight:800;letter-spacing:3px;margin-bottom:8px;background:linear-gradient(135deg,#D4AF37 0%,#f5d77a 40%,#D4AF37 60%,#b8962e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 100%;animation:shimmer 3s ease-in-out infinite}
+    @keyframes shimmer{0%{background-position:100% 0}50%{background-position:0 0}100%{background-position:100% 0}}
+    .subtitle{text-align:center;color:#999;font-size:14px;margin-bottom:36px;letter-spacing:.5px}
+    h1{text-align:center;font-size:26px;font-weight:700;line-height:1.3;margin-bottom:10px}
+    .gold{color:#D4AF37}
+    .hub-desc{text-align:center;color:#aaa;font-size:15px;line-height:1.6;margin-bottom:32px}
+    .cards{display:flex;flex-direction:column;gap:16px}
+    .card{background:linear-gradient(145deg,#141428 0%,#1a1a2e 100%);border:1px solid #2a2a3e;border-radius:16px;padding:22px;text-decoration:none;color:#fff;transition:all .3s ease;position:relative;overflow:hidden;animation:fadeUp .6s ease forwards;opacity:0}
+    .card:nth-child(1){animation-delay:.1s}.card:nth-child(2){animation-delay:.2s}.card:nth-child(3){animation-delay:.3s}.card:nth-child(4){animation-delay:.4s}.card:nth-child(5){animation-delay:.5s}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(212,175,55,.06),transparent);transition:left .5s ease}
+    .card:hover::before{left:100%}
+    .card:hover{border-color:#D4AF37;transform:translateY(-3px);box-shadow:0 8px 30px rgba(212,175,55,.12)}
+    .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .card-emoji{font-size:28px}
+    .card-badge{background:rgba(212,175,55,.15);color:#D4AF37;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.5px}
+    .card-title{font-size:17px;font-weight:700;margin-bottom:6px;line-height:1.3}
+    .card-desc{font-size:13px;color:#999;line-height:1.5}
+    .card-arrow{text-align:right;color:#D4AF37;font-size:14px;margin-top:10px;font-weight:600}
+    .footer{text-align:center;color:#444;font-size:11px;margin-top:40px;letter-spacing:.5px}
+    .footer a{color:#D4AF37;text-decoration:none}
+    .stats-bar{display:flex;justify-content:center;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+    .stat{text-align:center}
+    .stat-num{font-size:22px;font-weight:800;color:#D4AF37}
+    .stat-label{font-size:11px;color:#666;margin-top:2px}
   </style>
 </head>
 <body>
+  <div class="bg-float"></div>
   <div class="container">
-    <div class="logo"><span class="gold">LITPER</span> OFICIAL</div>
-    <h1>Guías <span class="gold">Gratuitas</span></h1>
-    <p class="subtitle">Descarga nuestras guías y transforma tu descanso</p>
-    <a href="/tips-hotel" class="card">
-      <span class="badge">GUÍA GRATUITA</span>
-      <h2>7 Tips para Dormir como en Hotel 5★</h2>
-      <p>Descubre los secretos de los mejores hoteles para transformar tu dormitorio en un santuario de descanso.</p>
-      <span class="arrow">→</span>
-    </a>
-    <a href="/protector-guia" class="card">
-      <span class="badge">GUÍA GRATUITA</span>
-      <h2>Cómo Proteger tu Colchón de Ácaros</h2>
-      <p>Todo lo que necesitas saber para mantener tu colchón como nuevo y proteger la salud de tu familia.</p>
-      <span class="arrow">→</span>
-    </a>
+    <div class="logo">LITPER</div>
+    <p class="subtitle">OFICIAL · GUÍAS GRATUITAS</p>
+    <h1>Transforma tu hogar con nuestras <span class="gold">guías premium</span></h1>
+    <p class="hub-desc">Contenido exclusivo que preparamos para ti. Elige la guía que más te interese y descárgala gratis.</p>
+    <div class="stats-bar">
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">Guías gratis</div></div>
+      <div class="stat"><div class="stat-num">2,400+</div><div class="stat-label">Descargas</div></div>
+      <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Valoración</div></div>
+    </div>
+    <div class="cards">
+      <a class="card" href="/tips-hotel">
+        <div class="card-top"><span class="card-emoji">🏨</span><span class="card-badge">COMENTA: TIPS</span></div>
+        <div class="card-title">7 Tips para Dormir como en Hotel 5★</div>
+        <div class="card-desc">Los secretos que usan los mejores hoteles para que sus huéspedes duerman como nunca.</div>
+        <div class="card-arrow">Descargar →</div>
+      </a>
+      <a class="card" href="/protector-guia">
+        <div class="card-top"><span class="card-emoji">🛡️</span><span class="card-badge">COMENTA: PROTECTOR</span></div>
+        <div class="card-title">Cómo Proteger tu Colchón de Ácaros</div>
+        <div class="card-desc">Guía completa para mantener tu colchón como nuevo y proteger la salud de tu familia.</div>
+        <div class="card-arrow">Descargar →</div>
+      </a>
+      <a class="card" href="/cortinas-blackout">
+        <div class="card-top"><span class="card-emoji">🌙</span><span class="card-badge">COMENTA: CORTINAS</span></div>
+        <div class="card-title">Guía Blackout Total: Oscuridad Perfecta</div>
+        <div class="card-desc">Todo sobre cortinas blackout: cómo elegirlas, instalarlas y transformar tu descanso.</div>
+        <div class="card-arrow">Descargar →</div>
+      </a>
+      <a class="card" href="/cobija-perfecta">
+        <div class="card-top"><span class="card-emoji">🧣</span><span class="card-badge">COMENTA: COBIJA</span></div>
+        <div class="card-title">La Ciencia del Abrigo Perfecto</div>
+        <div class="card-desc">Descubre qué cobija es ideal para ti según tu clima, material y estilo de descanso.</div>
+        <div class="card-arrow">Descargar →</div>
+      </a>
+      <a class="card" href="/suite-lujo">
+        <div class="card-top"><span class="card-emoji">✨</span><span class="card-badge">COMENTA: CUARTO</span></div>
+        <div class="card-title">10 Pasos: Suite de Lujo en Casa</div>
+        <div class="card-desc">Convierte tu habitación en una suite premium con los mismos productos que usan los hoteles.</div>
+        <div class="card-arrow">Descargar →</div>
+      </a>
+    </div>
     <div class="footer">
       <p>LITPER OFICIAL — Textiles Premium para tu Hogar</p>
-      <p style="margin-top:4px">Colombia · Ecuador · Chile</p>
+      <p style="margin-top:6px"><a href="https://litper.store" target="_blank">litper.store</a></p>
     </div>
   </div>
 </body>
-  </html>
+</html>
