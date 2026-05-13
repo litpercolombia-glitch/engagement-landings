@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo Proteger tu Colchón de Ácaros — LITPER</title>
+  <meta name="description" content="Descarga GRATIS la guía para proteger tu colchón de ácaros y fluidos. Mantén tu cama como nueva.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f0f1a; color: #fff; min-height: 100vh; }
+    .container { max-width: 480px; margin: 0 auto; padding: 30px 20px; }
+    .logo { text-align: center; font-size: 20px; font-weight: 700; letter-spacing: 2px; margin-bottom: 24px; }
+    .gold { color: #d4a843; }
+    .badge { background: #d4a843; color: #0f0f1a; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 16px; }
+    h1 { font-size: 26px; line-height: 1.3; margin-bottom: 12px; }
+    .desc { color: #bbb; font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+    .stat-bar { background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 12px; padding: 16px; text-align: center; margin-bottom: 24px; }
+    .stat-bar .number { font-size: 32px; font-weight: 700; color: #d4a843; }
+    .stat-bar .label { font-size: 13px; color: #999; margin-top: 4px; }
+    .benefits { list-style: none; margin-bottom: 28px; }
+    .benefits li { padding: 8px 0; padding-left: 28px; position: relative; color: #ddd; font-size: 14px; }
+    .benefits li::before { content: '✓'; position: absolute; left: 0; color: #d4a843; font-weight: 700; font-size: 16px; }
+    .form-card { background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 16px; padding: 24px; }
+    .form-card h2 { font-size: 18px; margin-bottom: 4px; }
+    .form-card .sub { color: #999; font-size: 13px; margin-bottom: 20px; }
+    .field { margin-bottom: 14px; }
+    .field label { display: block; font-size: 13px; color: #aaa; margin-bottom: 5px; }
+    .field input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #333; background: #12121f; color: #fff; font-size: 15px; outline: none; transition: border-color 0.2s; }
+    .field input:focus { border-color: #d4a843; }
+    .field input::placeholder { color: #555; }
+    .btn { width: 100%; padding: 14px; background: #d4a843; color: #0f0f1a; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 6px; }
+    .btn:hover { background: #e5b954; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .privacy { text-align: center; color: #666; font-size: 11px; margin-top: 12px; }
+    .success { display: none; text-align: center; padding: 20px; }
+    .success h2 { color: #d4a843; margin-bottom: 12px; font-size: 22px; }
+    .success p { color: #bbb; margin-bottom: 20px; font-size: 14px; }
+    .btn-download { display: inline-block; padding: 14px 32px; background: #d4a843; color: #0f0f1a; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; }
+    .btn-download:hover { background: #e5b954; }
+    .btn-wa { display: inline-block; padding: 12px 28px; background: #25d366; color: #fff; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; margin-top: 12px; }
+    .btn-product { display: inline-block; padding: 12px 28px; background: transparent; border: 1px solid #d4a843; color: #d4a843; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; margin-top: 12px; }
+    .error-msg { color: #ff6b6b; font-size: 13px; margin-top: 8px; display: none; }
+    .footer { text-align: center; color: #555; font-size: 11px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo"><span class="gold">LITPER</span> OFICIAL</div>
+    <span class="badge">GUÍA GRATUITA</span>
+    <h1>Cómo Proteger tu Colchón de <span class="gold">Ácaros y Fluidos</span></h1>
+    <p class="desc">Todo lo que necesitas saber para mantener tu colchón como nuevo y proteger la salud de tu familia.</p>
+    <div class="stat-bar">
+      <div class="number">2,000,000</div>
+      <div class="label">ácaros pueden vivir en un colchón sin protección</div>
+    </div>
+    <ul class="benefits">
+      <li>Qué son los ácaros y por qué afectan tu salud</li>
+      <li>Los 5 errores que dañan tu colchón sin que lo sepas</li>
+      <li>Cómo funciona la tecnología antifluido</li>
+      <li>Guía de limpieza profunda paso a paso</li>
+      <li>El protector que usan los hoteles premium</li>
+    </ul>
+    <div class="form-card" id="formSection">
+      <h2>¿Quieres la guía <span class="gold">gratis</span>?</h2>
+      <p class="sub">Déjanos tus datos y descárgala al instante</p>
+      <form id="leadForm" onsubmit="handleSubmit(event)">
+        <div class="field">
+          <label for="name">Tu nombre</label>
+          <input type="text" id="name" name="name" placeholder="Ej: María López" required>
+        </div>
+        <div class="field">
+          <label for="city">Tu ciudad</label>
+          <input type="text" id="city" name="city" placeholder="Ej: Bogotá, Medellín..." required>
+        </div>
+        <div class="field">
+          <label for="whatsapp">Tu WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ej: 3001234567" required pattern="[0-9]{7,15}">
+        </div>
+        <button type="submit" class="btn" id="submitBtn">DESCARGAR GUÍA GRATIS</button>
+        <p class="error-msg" id="errorMsg"></p>
+      </form>
+      <p class="privacy">🔒 Tus datos están seguros. No compartimos tu información.</p>
+    </div>
+    <div class="success" id="successSection">
+      <h2>🎉 ¡Tu guía está lista!</h2>
+      <p>Gracias por tu interés. Descárgala ahora y protege tu colchón.</p>
+      <a href="https://assets.api.gamma.app/export/pdf/qvdmm7tpmazqwt3/179b65a0fbe9c1ff6c0b6006b260d29b/Como-Proteger-Tu-Colchon-de-Acaros-y-Fluidos.pdf" class="btn-download" target="_blank" rel="noopener">📥 DESCARGAR PDF</a>
+      <br>
+      <a href="https://wa.me/573229225043?text=Hola%20Litper%21%20Descargué%20la%20guía%20de%20Protección%20de%20Colchón%20y%20quiero%20saber%20más%20del%20protector%20antifluido" class="btn-wa" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+      <br>
+      <a href="https://litper-home.myshopify.com/products/protector-colchon-antifluido-paga-1-lleva-6" class="btn-product" target="_blank" rel="noopener">🛒 Ver Protector Antifluido</a>
+    </div>
+    <div class="footer">
+      <p>LITPER OFICIAL — Textiles Premium para tu Hogar</p>
+    </div>
+  </div>
+  <script>
+    const SUPABASE_URL = 'https://gtsivwbnhcawvmsfujby.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd0c2l2d2JuaGNhd3Ztc2Z1amJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY0NzE1OTksImV4cCI6MjA4MjA0NzU5OX0.aCLguM3d7vsX5z7PhOQs__TSORmiSmLOI7SINfzBKzg';
+    const PDF_NAME = 'proteger-colchon-acaros';
+    const SOURCE_KEYWORD = 'PROTECTOR';
+    const urlParams = new URLSearchParams(window.location.search);
+    const igUser = urlParams.get('ig') || '';
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const errorMsg = document.getElementById('errorMsg');
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+      errorMsg.style.display = 'none';
+      const name = document.getElementById('name').value.trim();
+      const city = document.getElementById('city').value.trim();
+      const whatsapp = document.getElementById('whatsapp').value.trim();
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/lead_captures`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            name: name, city: city, whatsapp: whatsapp,
+            pdf_downloaded: PDF_NAME, source_keyword: SOURCE_KEYWORD,
+            ig_username: igUser, sofia_notified: false, sale_closed: false
+          })
+        });
+        if (!res.ok) throw new Error('Error al guardar');
+        document.getElementById('formSection').style.display = 'none';
+        document.getElementById('successSection').style.display = 'block';
+        fetch(`${SUPABASE_URL}/rest/v1/rpc/notify_new_lead`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` },
+          body: JSON.stringify({ lead_name: name, lead_city: city, lead_wa: whatsapp, lead_pdf: PDF_NAME })
+        }).catch(() => {});
+      } catch (err) {
+        errorMsg.textContent = 'Hubo un error. Intenta de nuevo.';
+        errorMsg.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'DESCARGAR GUÍA GRATIS';
+      }
+    }
+  </script>
+</body>
+  </html>
