@@ -1,0 +1,15 @@
+{
+    "rewrites": [
+          { "source": "/tips-hotel", "destination": "/tips-hotel/index.html" },
+          { "source": "/protector-guia", "destination": "/protector-guia/index.html" }
+    ],
+    "headers": [
+          {
+                  "source": "/(.*)",
+                  "headers": [
+                            { "key": "X-Content-Type-Options", "value": "nosniff" },
+                            { "key": "X-Frame-Options", "value": "DENY" }
+                  ]
+          }
+    ]
+}
