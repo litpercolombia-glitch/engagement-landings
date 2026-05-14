@@ -63,7 +63,7 @@ background-size:200%;animation:shimmer 3s linear infinite}
 <div style="font-size:48px;margin-bottom:12px">🎉</div>
 <h3 style="font-size:20px;margin-bottom:8px">¡Tu guía está lista!</h3>
 <p style="opacity:.7;font-size:14px;margin-bottom:20px">Descárgala y transforma la luz de tu hogar</p>
-<a href="#" target="_blank" style="display:block;padding:14px;border-radius:10px;background:#D4AF37;color:#0d0d1a;font-weight:700;text-decoration:none;font-size:16px;margin-bottom:12px">📥 DESCARGAR PDF</a>
+<a onclick="downloadPDF(event)" href="#" target="_blank" style="display:block;padding:14px;border-radius:10px;background:#D4AF37;color:#0d0d1a;font-weight:700;text-decoration:none;font-size:16px;margin-bottom:12px">📥 DESCARGAR PDF</a>
 <a href="https://wa.me/573229225043?text=Hola%20Litper!%20Descargué%20la%20guía%20de%20Cortinas%20Blackout%20y%20quiero%20cotizar%20para%20mi%20casa" target="_blank" style="display:block;padding:16px;border-radius:10px;background:#25d366;color:#fff;font-weight:700;text-decoration:none;font-size:18px;margin-bottom:8px">💬 Cotizar Cortinas Blackout</a>
 <p style="font-size:12px;opacity:.6;margin-bottom:8px">Escríbenos y te asesoramos gratis con las medidas de tu ventana</p>
 </div>
@@ -92,6 +92,8 @@ fetch(`${SUPABASE_URL}/rest/v1/rpc/notify_new_lead`,{method:'POST',headers:{'Con
 body:JSON.stringify({lead_name:name,lead_city:city,lead_wa:whatsapp,lead_pdf:PDF_NAME})}).catch(()=>{});
 }catch(err){errorMsg.textContent='Hubo un error. Intenta de nuevo.';errorMsg.style.display='block';btn.disabled=false;btn.textContent='DESCARGAR GUÍA GRATIS';}
 }
+
+function downloadPDF(e){e.preventDefault();var a=e.currentTarget;var url=a.href;var name=PDF_NAME+'.pdf';a.textContent='\u23F3 Descargando...';a.style.pointerEvents='none';fetch(url).then(function(r){return r.blob()}).then(function(b){var u=URL.createObjectURL(b);var l=document.createElement('a');l.href=u;l.download=name;document.body.appendChild(l);l.click();document.body.removeChild(l);URL.revokeObjectURL(u);a.textContent='\u2705 \u00A1Descargada!';setTimeout(function(){a.innerHTML='\uD83D\uDCE5 DESCARGAR PDF';a.style.pointerEvents='auto';},3000);}).catch(function(){window.open(url,'_blank');a.innerHTML='\uD83D\uDCE5 DESCARGAR PDF';a.style.pointerEvents='auto';});}
 </script>
 </body>
 </html>
