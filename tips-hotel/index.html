@@ -96,7 +96,7 @@ body:JSON.stringify({lead_name:name,lead_city:city,lead_wa:whatsapp,lead_pdf:PDF
 }catch(err){errorMsg.textContent='Hubo un error. Intenta de nuevo.';errorMsg.style.display='block';btn.disabled=false;btn.textContent='DESCARGAR GUÍA GRATIS';}
 }
 
-function downloadPDF(e){e.preventDefault();var a=e.currentTarget;var url=a.href;var name=PDF_NAME+'.pdf';a.textContent='\u23F3 Descargando...';a.style.pointerEvents='none';fetch(url).then(function(r){return r.blob()}).then(function(b){var u=URL.createObjectURL(b);var l=document.createElement('a');l.href=u;l.download=name;document.body.appendChild(l);l.click();document.body.removeChild(l);URL.revokeObjectURL(u);a.textContent='\u2705 \u00A1Descargada!';setTimeout(function(){a.innerHTML='\uD83D\uDCE5 DESCARGAR PDF';a.style.pointerEvents='auto';},3000);}).catch(function(){window.open(url,'_blank');a.innerHTML='\uD83D\uDCE5 DESCARGAR PDF';a.style.pointerEvents='auto';});}
+function downloadPDF(e){e.preventDefault();var a=e.currentTarget;var url=a.href;var name=PDF_NAME+'.pdf';a.textContent='\u23F3 Descargando...';a.style.pointerEvents='none';fetch('/api/download?url='+encodeURIComponent(url)+'&name='+encodeURIComponent(PDF_NAME)).then(function(r){return r.blob()}).then(function(b){var u=URL.createObjectURL(b);var l=document.createElement('a');l.href=u;l.download=name;document.body.appendChild(l);l.click();document.body.removeChild(l);URL.revokeObjectURL(u);a.textContent='\u2705 \u00A1Descargada!';setTimeout(function(){a.innerHTML='\uD83D\uDCE5 DESCARGAR PDF';a.style.pointerEvents='auto';},3000);}).catch(function(){window.open(url,'_blank');a.innerHTML='\uD83D\uDCE5 DESCARGAR PDF';a.style.pointerEvents='auto';});}
 </script>
 </body>
 </html>
