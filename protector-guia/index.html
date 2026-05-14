@@ -98,7 +98,7 @@ fetch(`${SUPABASE_URL}/rest/v1/rpc/notify_new_lead`,{method:'POST',headers:{'Con
 body:JSON.stringify({lead_name:name,lead_city:city,lead_wa:whatsapp,lead_pdf:PDF_NAME})}).catch(()=>{});
 }catch(err){errorMsg.textContent='Hubo un error. Intenta de nuevo.';errorMsg.style.display='block';btn.disabled=false;btn.textContent='DESCARGAR GUÍA GRATIS';}
 }
-function downloadPDF(e){e.preventDefault();const a=e.currentTarget;const url=a.href;const name=PDF_NAME+'.pdf';a.textContent='⏳ Descargando...';a.style.pointerEvents='none';fetch(url).then(r=>r.blob()).then(b=>{const u=URL.createObjectURL(b);const l=document.createElement('a');l.href=u;l.download=name;document.body.appendChild(l);l.click();document.body.removeChild(l);URL.revokeObjectURL(u);a.textContent='✅ ¡Descargada!';setTimeout(()=>{a.textContent='📥 DESCARGAR PDF';a.style.pointerEvents='auto';},3000);}).catch(()=>{window.open(url,'_blank');a.textContent='📥 DESCARGAR PDF';a.style.pointerEvents='auto';});}
+function downloadPDF(e){e.preventDefault();const a=e.currentTarget;const url=a.href;const name=PDF_NAME+'.pdf';a.textContent='⏳ Descargando...';a.style.pointerEvents='none';fetch('/api/download?url='+encodeURIComponent(url)+'&name='+encodeURIComponent(PDF_NAME)).then(r=>r.blob()).then(b=>{const u=URL.createObjectURL(b);const l=document.createElement('a');l.href=u;l.download=name;document.body.appendChild(l);l.click();document.body.removeChild(l);URL.revokeObjectURL(u);a.textContent='✅ ¡Descargada!';setTimeout(()=>{a.textContent='📥 DESCARGAR PDF';a.style.pointerEvents='auto';},3000);}).catch(()=>{window.open(url,'_blank');a.textContent='📥 DESCARGAR PDF';a.style.pointerEvents='auto';});}
 </script>
 </body>
 </html>
