@@ -1,17 +1,57 @@
 {
-  "rewrites": [
-    { "source": "/tips-hotel", "destination": "/tips-hotel/index.html" },
-    { "source": "/protector-guia", "destination": "/protector-guia/index.html" },
-    { "source": "/cortinas-blackout", "destination": "/cortinas-blackout/index.html" },
-    { "source": "/cobija-perfecta", "destination": "/cobija-perfecta/index.html" },
-    { "source": "/suite-lujo", "destination": "/suite-lujo/index.html" }
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/tips-hotel",
+      "destination": "/#hotel",
+      "permanent": false
+    },
+    {
+      "source": "/protector-guia",
+      "destination": "/#protector",
+      "permanent": false
+    },
+    {
+      "source": "/cortinas-blackout",
+      "destination": "/#blackout",
+      "permanent": false
+    },
+    {
+      "source": "/cobija-perfecta",
+      "destination": "/#abrigo",
+      "permanent": false
+    },
+    {
+      "source": "/suite-lujo",
+      "destination": "/#suite",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    },
+    {
+      "source": "/guias/(.*)",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     }
   ]
